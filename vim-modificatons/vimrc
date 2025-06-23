@@ -1,0 +1,61 @@
+" -------------------- Plugin Manager --------------------
+call plug#begin('~/.vim/plugged')
+
+" Auto pairs for brackets and quotes
+Plug 'jiangmiao/auto-pairs'
+
+" File explorer
+Plug 'preservim/nerdtree'
+
+" Floating terminal inside Vim
+Plug 'voldikss/vim-floaterm'
+
+" Status line
+Plug 'vim-airline/vim-airline'
+
+" Color theme
+Plug 'morhetz/gruvbox'
+
+call plug#end()
+
+" -------------------- General Settings --------------------
+syntax on
+set number              " Show line numbers
+set relativenumber      " Show relative line numbers
+set clipboard=unnamedplus " Use system clipboard
+set mouse=a             " Enable mouse support
+set tabstop=4           " Number of spaces for a tab
+set shiftwidth=4        " Number of spaces to use for autoindent
+set expandtab           " Use spaces instead of tabs
+set cursorline          " Highlight the current line
+
+colorscheme cyberpunk     " Set the color scheme
+
+" -------------------- Keybindings --------------------
+
+" Toggle NERDTree file explorer
+nnoremap <C-n> :NERDTreeToggle<CR>
+
+" Toggle floating terminal (like sheetcode)
+nnoremap <C-t> :FloatermToggle<CR>
+tnoremap <C-t> <C-\><C-n>:FloatermToggle<CR>
+
+" Split windows
+nnoremap <leader>v :vsplit<CR>
+nnoremap <leader>h :split<CR>
+
+" Move between splits
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+
+" Auto save on leaving insert mode
+autocmd InsertLeave * silent! write
+
+" -------------------- Floaterm Configuration --------------------
+let g:floaterm_keymap_toggle = '<C-t>'
+let g:floaterm_position = 'center'
+let g:floaterm_height = 0.8
+let g:floaterm_width = 0.8
+let g:floaterm_borderchars = '─│─│╭╮╯╰'
