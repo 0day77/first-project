@@ -19,7 +19,7 @@ Plug 'morhetz/gruvbox'
 call plug#end()
 
 " -------------------- General Settings --------------------
-syntax on
+syntax off
 set number              " Show line numbers
 set relativenumber      " Show relative line numbers
 set clipboard=unnamedplus " Use system clipboard
